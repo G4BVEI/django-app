@@ -11,7 +11,7 @@ class Curso(models.Model):
 
 class Student(models.Model):
     nome = models.CharField(max_length=50)
-    cursoId = models.ForeignKey(Curso)
+    cursoId = models.ForeignKey(Curso, on_delete=models.DO_NOTHING)
     matricula = models.PositiveBigIntegerField(unique=True)
 
     def __str__(self):
